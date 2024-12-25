@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>羊了个羊PLUS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-menu" class="menu-container">
+        <h1>羊了个羊PLUS</h1>
+        <button id="start-game">开始游戏</button>
+        <div id="level-info">当前关卡: 1</div>
+    </div>
+<audio id="clickSound" src="sounds/click.mp3" preload="auto"></audio>
+    <audio id="failSound" src="sounds/fail.mp3" preload="auto"></audio>
+    <audio id="gameoverSound" src="sounds/gameover.mp3" preload="auto"></audio>
+    <audio id="matchSound" src="sounds/match.mp3" preload="auto"></audio>
+    <audio id="successSound" src="sounds/success.mp3" preload="auto"></audio>
+    <audio id="gamePassSound" src="sounds/gamePass.mp3" preload="auto"></audio>
+    <div id="game-container" class="container" style="display: none;">
+        <div class="game-header">
+            <div class="score">分数: 0</div>
+            <div class="level">关卡: 1</div>
+            <button class="menu-button">返回主菜单</button>
+        </div>
+        <div class="tools">
+            <button class="tool-button" id="shuffle-tool" title="打乱剩余卡片">
+                🔄 打乱卡片
+                <span class="tool-count">1</span>
+            </button>
+            <button class="tool-button" id="undo-tool" title="撤回上一步">
+                ↩️ 撤回
+                <span class="tool-count">1</span>
+            </button>
+            <button class="tool-button" id="clear-tool" title="清除三张卡槽牌">
+                🗑️ 清除
+                <span class="tool-count">1</span>
+            </button>
+        </div>
+        <div class="game-board"></div>
+        <div class="collection-slot">
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+        </div>
+        <div class="removed-cards"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        const symbols = [
+            'images/bear.png',
+            'images/cat.png',
+            'images/Dog.png',
+            'images/elephant.png',
+            'images/fox.png',
+            'images/giraffe.png',
+            'images/koala.png',
+            'images/lion.png',
+            'images/monkey.png',
+            'images/panda.png',
+            'images/penguin.png',
+            'images/rabbit.png'
+        ];
+
+        const gameManager = new GameManager(symbols);
+    </script>
+</body>
+</html>
